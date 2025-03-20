@@ -38,7 +38,7 @@ const Register = () => {
         setLoading(true)
         try {
             const res = await registerUser({ email, password });
-            if (res?.response?.data?.msg) {
+            if (res?.response?.data) {
                 toast.error(res?.response?.data?.msg || "Something went wrong!");
             } else {
                 toast.success("Registration Successful!");
