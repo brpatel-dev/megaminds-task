@@ -9,13 +9,13 @@ const ProtectedRoute = ({ children }) => {
 
     useEffect(() => {
         if (!isAuthenticated) {
-            router.push("/auth/login"); // Redirect to login page
+            router.push("/auth/login");
         } else {
             setLoading(false);
         }
     }, [isAuthenticated, router]);
 
-    if (loading) return <p>Loading...</p>; // Prevent flicker on page load
+    if (loading) return <p>Loading...</p>;
 
     return isAuthenticated ? children : null;
 };

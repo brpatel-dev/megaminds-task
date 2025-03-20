@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://megaminds-task.vercel.app/books";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/books`;
 
 const getAuthHeaders = () => {
     if (typeof window !== "undefined") {

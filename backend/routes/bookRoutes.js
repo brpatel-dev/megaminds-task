@@ -4,7 +4,7 @@ const Book = require("../models/Book");
 
 const router = express.Router();
 
-// GET books - Only fetch books of the logged-in user
+// GET books
 router.get("/", authMiddleware, async (req, res) => {
     try {
         const books = await Book.find({ userId: req.user }); // Fetch only user-specific books
@@ -14,7 +14,7 @@ router.get("/", authMiddleware, async (req, res) => {
     }
 });
 
-// POST a new book - Associate book with the user
+// POST a new book
 router.post("/", authMiddleware, async (req, res) => {
     try {
         const { title, author } = req.body;
@@ -35,7 +35,7 @@ router.post("/", authMiddleware, async (req, res) => {
     }
 });
 
-// Update a book by ID - Ensure the user owns the book
+// Update a book 
 router.put("/:id", authMiddleware, async (req, res) => {
     try {
         const { title, author } = req.body;
@@ -59,7 +59,7 @@ router.put("/:id", authMiddleware, async (req, res) => {
     }
 });
 
-// Delete a book by ID - Ensure the user owns the book
+// Delete 
 router.delete("/:id", authMiddleware, async (req, res) => {
     try {
         const book = await Book.findOneAndDelete({ _id: req.params.id, userId: req.user });

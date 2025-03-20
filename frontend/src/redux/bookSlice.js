@@ -13,11 +13,13 @@ const bookSlice = createSlice({
         setBooks: (state, action) => {
             state.books = action.payload;
             state.loading = false;
+            state.error = null;
         },
         setLoading: (state) => {
             state.loading = true;
         },
         setError: (state, action) => {
+            state.books = [];
             state.error = action.payload;
             state.loading = false;
         },

@@ -1,15 +1,23 @@
 import axios from "axios";
 
-const API_URL = "https://megaminds-task.vercel.app/api/auth";
+const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/auth`;
 
 export const registerUser = async (userData) => {
-    return await axios.post(`${API_URL}/register`, userData);
+    try {
+        return await axios.post(`${API_URL}/register`, userData);
+    } catch (error) {
+        return error
+    }
 };
 
 export const loginUser = async (userData) => {
-    const res = await axios.post(`${API_URL}/login`, userData);
-    localStorage.setItem("token", res.data.token);
-    return res.data;
+    try {
+        const res = await axios.post(`${API_URL}/login`, userData);
+        localStorage.setItem("token", res.data.token);
+        return res.data;
+    } catch (error) {
+        return error
+    }
 };
 
 export const logoutUser = () => {
