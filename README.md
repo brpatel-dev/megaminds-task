@@ -5,8 +5,8 @@ This is a **Full Stack Book Management Application** built using **Next.js (Fron
 ---
 
 ## 🌍 Live Demo
-🔗 **Frontend**: [Vercel Deployment Link](https://frontend.vercel.app)  
-🔗 **Backend**: [Vercel Deployment Link](https://backend.vercel.app)
+🔗 **Frontend**: [Vercel Deployment Link](https://megaminds-task-app.vercel.app)  
+🔗 **Backend**: [Vercel Deployment Link](https://megaminds-task.vercel.app)
 
 ---
 
@@ -65,7 +65,7 @@ npm install
 ### 🔑 3.1 Create `.env` file in `/frontend`
 Paste the following:
 ```env
-NEXT_PUBLIC_API_URL=https://backend.vercel.app
+NEXT_PUBLIC_API_URL=http://localhost:5000
 ```
 
 ### 🚀 3.2 Start Frontend
